@@ -3,7 +3,7 @@ name: Deploy HTML/CSS site to GitHub Pages
 on:
   push:
     branches:
-      - master  # change this if your default branch is different
+      - master  # or main, if that's your default
  
 permissions:
   contents: read
@@ -16,15 +16,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+ 
       - name: Setup Pages
         uses: actions/configure-pages@v3
-        
+ 
       - name: Upload static files
         uses: actions/upload-pages-artifact@v2
         with:
-          path: . #deploys everything in root directory
+          path: .  # adjust this if your site files are in a subfolder
  
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+ 
