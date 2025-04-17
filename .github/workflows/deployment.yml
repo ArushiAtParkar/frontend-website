@@ -3,7 +3,7 @@ name: Deploy HTML/CSS site to GitHub Pages
 on:
   push:
     branches:
-      - main  # change this if your default branch is different
+      - master  # change this if your default branch is different
  
 permissions:
   contents: read
