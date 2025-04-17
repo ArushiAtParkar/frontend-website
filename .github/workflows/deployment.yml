@@ -1,0 +1,27 @@
+name: Deploy HTML/CSS site to GitHub Pages
+ 
+on:
+  push:
+    branches:
+      - main  # change this if your default branch is different
+ 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+ 
+      - name: Upload static files
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: . #deploys everything in root directory
+ 
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
