@@ -3,7 +3,7 @@ name: Deploy HTML/CSS site to GitHub Pages
 on:
   push:
     branches:
-      - master  # or main, if that's your default
+      - master 
  
 permissions:
   contents: read
@@ -23,7 +23,7 @@ jobs:
       - name: Upload static files
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .  # adjust this if your site files are in a subfolder
+          path: .  
  
       - name: Deploy to GitHub Pages
         id: deployment
